@@ -3,7 +3,7 @@
 
 
 ru! defaults.vim                " Use Enhanced Vim defaults
-set mouse=a                     " Reset the mouse setting from defaults
+set mouse=v                     " Reset the mouse setting from defaults
 "aug vimStartup | au! | aug END  " Revert last positioned jump, as it is defined below
 let g:skip_defaults_vim = 1     " Do not source defaults.vim again (after loading this system vimrc)
 
@@ -33,11 +33,6 @@ if &term =~ 'xterm-256color'    " mintty identifies itself as xterm-compatible
   endif
   " set termguicolors           " Uncomment to allow truecolors on mintty
 endif
-
-
-nnoremap ,s yiw:grep -r <C-R>0 * <CR>:copen<CR>
-nnoremap <F6> <Esc>:w<CR>:!python %<CR>
-
 
 "------------------------------------------------------------------------------
 " Only do this part when compiled with support for autocommands.
@@ -229,3 +224,7 @@ endif
 
 " ctags
 set tags=./tags;,tags
+set cst
+
+nnoremap ,s yiw:grep -r <C-R>0 * <CR>:copen<CR>
+nnoremap <F6> <Esc>:w<CR>:!python %<CR>
